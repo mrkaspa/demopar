@@ -12,9 +12,10 @@
           (range 1 50)
           (pmap randi)
           (reduce +))]
-   (println "SUM = " sum)))
+   sum))
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (time (dox)))
+  (time (dox))
+  (shutdown-agents))
