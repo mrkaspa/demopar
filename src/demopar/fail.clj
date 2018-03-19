@@ -2,16 +2,16 @@
   (:require [failjure.core :as f]))
 
 (defn validate-name
-  [val]
-  (let [{:keys [id]} val]
-   (if (nil? id)
+  [{:keys [id] :as m}]
+  (if (nil? id)
     (f/fail "FAIL")
-    val)))
+    m))
 
 (defn fail-exec
   [& args]
-  (let [val {:id 123}
-        res (f/attempt-all [res (validate-name val)]
+  (let [m {:id 123}
+        res (f/attempt-all
+             [res (validate-name m)]
              "OK"
              (f/when-failed [_] "EPIC FAIL"))]
    (println "res = " res)))

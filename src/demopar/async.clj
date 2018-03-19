@@ -10,10 +10,10 @@
   (let [c (chan)
         r (range 1 50)]
    (doseq [n r]
-    (randi c))
+     (randi c))
    (go (doseq [n r]
-        (let [n (<! c)]
-          (println n))))))
+         (let [n (<! c)]
+           (println n))))))
 
 (defn async-exec
   [& args]
