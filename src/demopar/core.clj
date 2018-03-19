@@ -1,21 +1,18 @@
 (ns demopar.core
-  (:gen-class))
-
-(defn randi
-  [n]
-  (rand-int 10))
-
-(defn dox
-  []
-  (let
-    [sum (->>
-          (range 1 50)
-          (pmap randi)
-          (reduce +))]
-   sum))
+  (:gen-class)
+  (:require [clojure.core.match :refer [match]])
+  (:require [demopar.pmap :refer [pmap-exec]])
+  (:require [demopar.otp :refer [otp-exec]])
+  (:require [demopar.async :refer [async-exec]])
+  (:require [demopar.fail :refer [fail-exec]]))
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (time (dox))
-  (shutdown-agents))
+  (match (vec args)
+   ["pmap"] (pmap-exec)
+   ["otp"] (otp-exec)
+   ["async"] (async-exec)
+   ["fail"] (fail-exec)
+   :else (println "unknow option")))
+

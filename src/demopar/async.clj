@@ -1,5 +1,4 @@
 (ns demopar.async
-  (:gen-class)
   (:require [clojure.core.async :as async :refer [<! >! chan go]]))
 
 (defn randi
@@ -16,7 +15,7 @@
         (let [n (<! c)]
           (println n))))))
 
-(defn -main
+(defn async-exec
   [& args]
   (dox)
   (Thread/sleep 1000))

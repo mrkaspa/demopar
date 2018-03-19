@@ -1,5 +1,4 @@
 (ns demopar.otp
-  (:gen-class)
   (:require [otplike.process :as process :refer [!]]))
 
 (process/proc-defn server
@@ -30,7 +29,7 @@
    ; ask spawned process to stop
    (! pid :stop)))
 
-(defn -main
+(defn otp-exec
   "I don't do a whole lot ... yet."
   [& args]
   (process/spawn client)
