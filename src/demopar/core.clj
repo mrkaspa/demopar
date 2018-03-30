@@ -14,4 +14,3 @@
     "fail" (fail-exec)
     "spec" (spec-exec)
     (println "unknow option")))
-
