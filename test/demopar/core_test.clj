@@ -1,7 +1,7 @@
 (ns demopar.core-test
-  (:require [clojure.test :refer :all]
-            [demopar.core :refer :all]))
+  (:require [clojure.test :refer [deftest testing is are]]
+            [demopar.pmap :as pmap]))
 
 (deftest a-test
   (testing "FIXME, I fail."
-    (is (= 0 1))))
+    (is (> (pmap/dox) 0))))
