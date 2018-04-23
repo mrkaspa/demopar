@@ -9,7 +9,7 @@
   default-exchange-name "")
 
 (defn message-handler
-  [ch {:keys [content-type delivery-tag type] :as meta} ^bytes payload]
+  [ch {:keys [content-type delivery-tag type]} ^bytes payload]
   (println (format
             "[consumer] Received a message: %s, delivery tag: %d, content type: %s, type: %s"
             (String. payload "UTF-8") delivery-tag content-type type)))
