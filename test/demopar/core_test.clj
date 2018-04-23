@@ -1,5 +1,5 @@
 (ns demopar.core-test
-  (:require [clojure.test :refer [deftest testing is are]]
+  (:require [clojure.test :refer [deftest testing is]]
             [demopar.pmap :as pmap]))
 
 (deftest a-test
