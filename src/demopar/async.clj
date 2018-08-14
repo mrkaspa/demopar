@@ -15,7 +15,13 @@
          (let [n (<! c)]
            (println n))))))
 
+(defn say
+  [{:keys [a b c]}]
+  (if-some [a a] ; VALIDATES A NOT NIL
+   (println a "+" b "+" c)))
+
 (defn async-exec
   [& args]
-  (dox)
+  (say {:a "eo"})
+  ; (dox)
   (Thread/sleep 1000))
