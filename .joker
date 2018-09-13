@@ -1,0 +1,2 @@
+{:known-macros [failjure.core/attempt-all
+                failjure.core/when-failed]}
