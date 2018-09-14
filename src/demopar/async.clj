@@ -9,9 +9,9 @@
   []
   (let [c (chan)
         r (range 1 50)]
-   (doseq [n r]
+   (doseq [_ r]
      (randi c))
-   (go (doseq [n r]
+   (go (doseq [_ r]
          (let [n (<! c)]
            (println n))))))
 

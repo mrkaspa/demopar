@@ -2,7 +2,7 @@
   (:require [failjure.core :as f]))
 
 (defn validate-name
-  [{:keys [id] :as m}]
+  [{:keys [id]}]
   (if (nil? id)
     (f/fail "FAIL")
     id))
