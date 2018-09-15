@@ -16,4 +16,8 @@
 
 (defn spec-exec
   []
-  (println (s/explain :music/release {:music/id #uuid "40e30dc1-55ac-33e1-85d3-1f1508140bfc"})))
+  (println
+    (s/explain
+      :music/release
+      {:music/id #uuid "40e30dc1-55ac-33e1-85d3-1f1508140bfc"
+       :music/artist "Nemo"})))
