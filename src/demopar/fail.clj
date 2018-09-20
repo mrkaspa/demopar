@@ -25,4 +25,4 @@
   (let
     [m {:name "Name"}
      res (process m)]
-   (println "res = " res)))
+    (println "res = " res)))
