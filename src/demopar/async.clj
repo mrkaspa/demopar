@@ -9,11 +9,11 @@
   []
   (let [c (chan)
         r (range 1 50)]
-   (doseq [_ r]
-     (randi c))
-   (go (doseq [_ r]
-         (let [n (<! c)]
-           (println n))))))
+    (doseq [_ r]
+      (randi c))
+    (go (doseq [_ r]
+          (let [n (<! c)]
+            (println n))))))
 
 (defn async-exec
   [& args]

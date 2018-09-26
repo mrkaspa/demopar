@@ -7,11 +7,11 @@
 (defn dox
   []
   (let
-    [sum (->>
-          (range 1 50)
-          (pmap randi)
-          (reduce +))]
-   sum))
+   [sum (->>
+         (range 1 50)
+         (pmap randi)
+         (reduce +))]
+    sum))
 
 (defn pmap-exec
   []

@@ -10,19 +10,19 @@
 (defn process
   [m]
   (f/attempt-all
-    [res (validate-name m)]
+   [res (validate-name m)]
+   (do
+     (println "res =" res)
+     "OK")
+   (f/when-failed
+    [{:keys [message]}]
     (do
-      (println "res =" res)
-      "OK")
-    (f/when-failed
-      [{:keys [message]}]
-      (do
-        (println "error =" message)
-        message))))
+      (println "error =" message)
+      message))))
 
 (defn fail-exec
   [& args]
   (let
-    [m {:name "Name"}
-     res (process m)]
+   [m {:name "Name"}
+    res (process m)]
     (println "res = " res)))
